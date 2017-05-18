@@ -1,2 +1,2 @@
-from asynccall import AsyncCallable
-from lazydict import LazyDict
+from .asynccall import AsyncCallable
+from .lazydict import LazyDict

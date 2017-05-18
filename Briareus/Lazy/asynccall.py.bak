@@ -56,9 +56,9 @@ from uuid import uuid1
 
 class AsyncFunction(object):
     def __init__(self, f):
-        self.uuid = "%s.%s" % (uuid1().hex, f.__name__)
-        self.func = types.FunctionType(f.__code__, 
-                                       f.__globals__, 
-                                       f.__name__, 
-                                       f.func.__defaults__, 
-                                       f.__closure__) 
+        self.uuid = "%s.%s" % (uuid1().hex, f.func_name)
+        self.func = types.FunctionType(f.func_code, 
+                                       f.func_globals, 
+                                       f.func_name, 
+                                       f.func.func_defaults, 
+                                       f.func_closure) 

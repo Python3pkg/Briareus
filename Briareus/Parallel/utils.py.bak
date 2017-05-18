@@ -39,7 +39,7 @@ def product2(iters, filters):
 
 
 if __name__ == '__main__':
-    print(product(list(range(10))))
+    print product(range(10))
 
 
 

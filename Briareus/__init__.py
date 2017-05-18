@@ -1,1 +1,1 @@
-from patch import setup as patch
+from .patch import setup as patch

@@ -1,1 +1,1 @@
-from asynccall import AsyncResult, LazyDict
+from .asynccall import AsyncResult, LazyDict

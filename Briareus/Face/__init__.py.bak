@@ -1,6 +1,6 @@
-import io as StringIO
-from .token_mod import TokenModifier
-from .ast_mod import ASTModifier
+import cStringIO as StringIO
+from token_mod import TokenModifier
+from ast_mod import ASTModifier
 import ast
 
 
@@ -18,7 +18,7 @@ from Briareus.Lazy import AsyncCallable as _async
 
 def modify(file_path, pass_lines=0, source=None):
     with open(file_path, "r") as f:
-        for x in range(pass_lines):
+        for x in xrange(pass_lines):
             f.readline()
         tokenMod = TokenModifier(f)
         modified = tokenMod.visit()

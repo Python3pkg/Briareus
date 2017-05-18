@@ -67,10 +67,10 @@ if __name__ == '__main__':
     r.add_routine(2, [], ["c", "d"])
     r.add_routine(3, ["a"], ["e", "f"])
     r.add_routine(4, ["a", "c"], ["f"])
-    print(r.routineDeps)
-    print(r.varOperators)
-    print(r.query_deps_by_routine(4))
-    print(r.query_deps_by_vars("f", OUT))
+    print r.routineDeps
+    print r.varOperators
+    print r.query_deps_by_routine(4)
+    print r.query_deps_by_vars("f", OUT)
 
 
 

@@ -1,5 +1,5 @@
 import ast
-from . import unparse
+import unparse
 
 
 class NamesMapper(ast.NodeTransformer):
@@ -45,7 +45,7 @@ class ASTModifier(ast.NodeTransformer):
         code = compile(module, '<string>', 'exec')
         eval(code, {}, ctx)
         function = ctx[funcion_name]
-        return function.__code__.co_varnames
+        return function.func_code.co_varnames
         
 
     def func_def(self, arg_items, body):
@@ -93,7 +93,7 @@ class ASTModifier(ast.NodeTransformer):
 
     def get_slice(self, src, args):
         maps = {}
-        for i in range(len(args)):
+        for i in xrange(len(args)):
             if isinstance(args[i], ast.Tuple):
                 src_1 = ast.Subscript(value=src, slice=ast.Index(value=ast.Num(n=i)), ctx=ast.Load())
                 maps.update(self.get_slice(src_1, args[i].elts))
